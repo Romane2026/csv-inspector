@@ -1,0 +1,90 @@
+# CSV Inspector
+
+## Description
+
+CSV Inspector is a command-line tool developed in Python for inspecting, validating, and analyzing CSV files.
+
+Key features include:
+- Reading CSV files
+- Displaying the number of rows and columns
+- Detecting missing values
+- Identifying numerical columns and calculating descriptive statistics
+- Filtering rows based on a column, an operator, and a value
+- Displaying results as readable tables in the terminal.
+
+## Technologies Used
+
+- Python 3.10+: Programming language
+- Poetry 2.x: Dependency, environment, and project management
+- Pandas: Reading and analyzing CSV data
+- Rich: Formatted terminal output.
+
+## Installation
+
+Clone the repository:
+
+git clone REPOSITORY_URL
+cd csv-inspector
+
+
+Install dependencies and the project:
+
+poetry install
+
+The 'poetry.lock' file ensures that the resolved versions of dependencies are used.
+
+## Usage
+
+Analyze a CSV file:
+
+poetry run csv-inspector data/students.csv
+
+
+Filter rows based on a condition:
+
+poetry run csv-inspector data/students.csv --filter grade ">" 12
+
+Available operators are '==', '!=', '>', '<', '>=', and '<='.
+
+## Building and Packaging
+
+The project uses Poetry and its 'poetry-core' backend.
+
+To build the distributions:
+
+poetry build
+
+This command generates two files in the 'dist/' directory:
+
+- A '.whl' file (Wheel distribution).
+- A '.tar.gz' file (source distribution).
+
+As this project is an interpreted Python application, it does not require native compilation into machine code. The build process described here involves preparing and packaging the project for distribution.
+
+## Versioning
+
+The project version is defined in 'pyproject.toml' under the 'version' field.
+
+Current version: 0.1.0.
+
+Dependency versions are declared in 'pyproject.toml', and their resolved versions are recorded in 'poetry.lock'.
+
+## Project Structure
+
+csv-inspector/
+├── data/
+│   └── students.csv
+├── src/
+│   └── csv_inspector/
+│       ├── __init__.py
+│       ├── cli.py
+│       ├── loader.py
+│       ├── validator.py
+│       ├── analyzer.py
+│       ├── filters.py
+│       └── report.py
+├── .gitignore
+├── poetry.lock
+├── pyproject.toml
+└── README.md
+
