@@ -1,0 +1,25 @@
+[project]
+name = "csv-inspector"
+version = "0.1.0"
+description = "A command-line tool to inspect and analyze CSV files"
+authors = [
+    {name = "Romane"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas (<3)",
+    "rich (>=15.0.0,<16.0.0)"
+]
+
+[project.scripts]
+csv-inspector = "csv_inspector.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [
+    { include = "csv_inspector", from = "src" }
+]
