@@ -23,7 +23,7 @@ Key features include:
 
 Clone the repository:
 
-git clone REPOSITORY_URL
+git clone https://github.com/Romane2026/csv-inspector.git
 cd csv-inspector
 
 
