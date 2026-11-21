@@ -107,6 +107,43 @@ The hooks include:
 - **Ruff format:** checks code formatting.
 
 
+## Unit Tests
+
+The project uses pytest to run unit tests and verify the behavior of its main components.
+
+### Installation
+
+Install the project dependencies, including the development dependencies:
+
+```bash
+poetry install
+```
+
+### Run the tests
+
+To run all unit tests:
+
+```bash
+poetry run pytest
+```
+
+To display detailed results for each test:
+
+```bash
+poetry run pytest -v
+```
+
+### Test coverage
+
+The tests cover the following modules:
+
+- **Loader:** successful CSV loading, missing files, empty files and files containing no data.
+- **Filters:** all six comparison operators, missing columns, unsupported operators, invalid numeric values and incompatible types.
+- **Analyzer:** CSV dimensions, column names, missing values, numeric columns and statistics.
+- **Validator:** valid data, empty DataFrames, missing or duplicate column names and missing values.
+
+
+
 ## Usage
 
 Analyze a CSV file:
