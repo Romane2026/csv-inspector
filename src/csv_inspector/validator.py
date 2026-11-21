@@ -11,14 +11,15 @@ def validate_csv(data: pd.DataFrame) -> list[str]:
     Returns:
         A list of validation error messages.
     """
-    errors = []
 
-    if data.empty:
-        errors.append("The CSV file contains no data.")
-        return errors
+    errors = []
 
     if len(data.columns) == 0:
         errors.append("The CSV file contains no columns.")
+        return errors
+
+    if data.empty:
+        errors.append("The CSV file contains no data.")
         return errors
 
     # Check for missing column names
