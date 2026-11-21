@@ -37,6 +37,40 @@ The 'poetry.lock' file ensures that the resolved versions of dependencies are us
 
 The project uses Ruff for static code analysis and code formatting.
 
+## Pre-commit Hooks
+
+The project uses pre-commit hooks to automatically run Ruff checks before each Git commit. This helps maintain code quality and consistent formatting.
+
+### How to set it up
+
+1. Install the project dependencies:
+
+```bash
+poetry install
+```
+
+2. Install the pre-commit Git hooks:
+
+```bash
+poetry run pre-commit install
+```
+
+### How to use it
+
+Hooks run automatically before each commit. If a check fails, the commit is blocked until the issues are fixed.
+
+To manually run all hooks on every tracked file:
+
+```bash
+poetry run pre-commit run --all-files
+```
+
+The hooks include:
+
+- **Ruff lint:** checks for code quality issues.
+- **Ruff format:** checks code formatting.
+
+
 ### Installation
 
 Ruff is included as a development dependency. Install the project dependencies using:
