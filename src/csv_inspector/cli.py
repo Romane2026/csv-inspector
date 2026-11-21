@@ -1,12 +1,11 @@
-
 import argparse
 import sys
 
-from csv_inspector.loader import load_csv
-from csv_inspector.validator import validate_csv
 from csv_inspector.analyzer import analyze_csv
 from csv_inspector.filters import filter_csv
+from csv_inspector.loader import load_csv
 from csv_inspector.report import display_report
+from csv_inspector.validator import validate_csv
 
 
 def main() -> None:
@@ -16,16 +15,13 @@ def main() -> None:
         description="Inspect, validate and analyze CSV files."
     )
 
-    parser.add_argument(
-        "file",
-        help="Path to the CSV file to inspect."
-    )
+    parser.add_argument("file", help="Path to the CSV file to inspect.")
 
     parser.add_argument(
         "--filter",
         nargs=3,
         metavar=("COLUMN", "OPERATOR", "VALUE"),
-        help="Filter rows, for example: --filter age '>' 25"
+        help="Filter rows, for example: --filter age '>' 25",
     )
 
     args = parser.parse_args()

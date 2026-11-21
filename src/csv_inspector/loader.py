@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 
 def load_csv(file_path: str) -> pd.DataFrame:
@@ -24,9 +25,9 @@ def load_csv(file_path: str) -> pd.DataFrame:
     try:
         data = pd.read_csv(path)
     except pd.errors.EmptyDataError:
-        raise ValueError("The CSV file is empty.")
+        raise ValueError("The CSV file is empty.") from None
     except pd.errors.ParserError:
-        raise ValueError("The CSV file is invalid.")
+        raise ValueError("The CSV file is invalid.") from None
 
     if data.empty:
         raise ValueError("The CSV file contains no data.")

@@ -1,7 +1,5 @@
-
 from rich.console import Console
 from rich.table import Table
-
 
 console = Console()
 
@@ -22,9 +20,7 @@ def display_report(analysis: dict) -> None:
 
     general_table.add_row("Number of rows", str(analysis["row_count"]))
     general_table.add_row("Number of columns", str(analysis["column_count"]))
-    general_table.add_row(
-        "Missing values", str(analysis["missing_values"])
-    )
+    general_table.add_row("Missing values", str(analysis["missing_values"]))
 
     console.print(general_table)
 

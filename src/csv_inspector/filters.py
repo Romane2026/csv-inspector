@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 
@@ -49,11 +48,11 @@ def filter_csv(
         except ValueError:
             raise ValueError(
                 f"Value '{value}' must be numeric for column '{column}'."
-            )
+            ) from None
 
     try:
         return data[operators[operator](series, value)]
     except TypeError:
         raise ValueError(
             f"Cannot apply operator '{operator}' to column '{column}'."
-        )
+        ) from None

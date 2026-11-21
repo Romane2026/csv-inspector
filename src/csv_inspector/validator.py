@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 
@@ -35,8 +34,6 @@ def validate_csv(data: pd.DataFrame) -> list[str]:
 
     for column, count in missing_values.items():
         if count > 0:
-            errors.append(
-                f"Column '{column}' contains {count} missing value(s)."
-            )
+            errors.append(f"Column '{column}' contains {count} missing value(s).")
 
     return errors
