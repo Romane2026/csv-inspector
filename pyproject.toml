@@ -23,3 +23,23 @@ build-backend = "poetry.core.masonry.api"
 packages = [
     { include = "csv_inspector", from = "src" }
 ]
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.17.6,<0.18.0)"
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",  # Errors and style issues
+    "F",  # Pyflakes: logical errors
+    "I",  # Import sorting
+    "B",  # Bugbear: potential bugs
+]
+
+[tool.ruff.format]
+quote-style = "double"

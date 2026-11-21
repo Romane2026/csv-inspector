@@ -33,6 +33,47 @@ poetry install
 
 The 'poetry.lock' file ensures that the resolved versions of dependencies are used.
 
+## Static Code Analysis
+
+The project uses Ruff for static code analysis and code formatting.
+
+### Installation
+
+Ruff is included as a development dependency. Install the project dependencies using:
+
+```bash
+poetry install
+```
+
+### Run the analysis
+
+To check the source code for errors and code quality issues:
+
+```bash
+poetry run ruff check .
+```
+
+To check whether the code follows Ruff's formatting rules:
+
+```bash
+poetry run ruff format --check .
+```
+
+To automatically fix supported linting issues:
+
+```bash
+poetry run ruff check --fix .
+```
+
+To automatically format the source code:
+
+```bash
+poetry run ruff format .
+```
+
+The Ruff configuration is defined in `pyproject.toml`.
+
+
 ## Usage
 
 Analyze a CSV file:
