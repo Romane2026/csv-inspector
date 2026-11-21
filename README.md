@@ -120,6 +120,38 @@ poetry run csv-inspector data/students.csv --filter grade ">" 12
 
 Available operators are '==', '!=', '>', '<', '>=', and '<='.
 
+
+## Logging
+
+The application uses Python's standard `logging` module to report information about its execution.
+
+Five logging levels are available:
+
+- **DEBUG**: detailed information about file loading, CSV dimensions, filtering and analysis.
+- **INFO**: confirmation of successful operations.
+- **WARNING**: non-blocking issues, such as missing values or empty filtering results.
+- **ERROR**: errors that prevent an operation from completing, such as invalid input files or filters.
+- **CRITICAL**: unexpected fatal errors.
+
+### Usage
+
+The default logging level is `INFO`.
+
+To change the logging level, use the `--log-level` option:
+
+```bash
+poetry run csv-inspector data/students.csv --log-level DEBUG
+```
+
+Available levels are `DEBUG`, `INFO`, `WARNING`, `ERROR` and `CRITICAL`.
+
+For example, to display only errors:
+
+```bash
+poetry run csv-inspector data/students.csv --log-level ERROR
+```
+
+
 ## Building and Packaging
 
 The project uses Poetry and its 'poetry-core' backend.
