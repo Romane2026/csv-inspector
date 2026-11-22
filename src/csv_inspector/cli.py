@@ -1,3 +1,9 @@
+"""Command-line interface for CSV Inspector.
+
+This module defines the application entry point and orchestrates
+CSV loading, validation, optional filtering, analysis, and reporting.
+"""
+
 import argparse
 import logging
 import sys
@@ -12,8 +18,23 @@ logger = logging.getLogger(__name__)
 
 
 def main() -> None:
-    """Run the CSV Inspector command-line application."""
+    """Run the CSV Inspector command-line application.
 
+    Parse command-line arguments, configure logging, load and validate
+    the CSV file, optionally filter its rows, analyze the data, and
+    display the resulting report.
+
+    Command-line arguments:
+        file: Path to the CSV file to inspect.
+        --filter: Optional filtering condition consisting of a column,
+            comparison operator, and value.
+        --log-level: Logging level to use. Defaults to INFO.
+
+    Exit codes:
+        0: Successful execution.
+        1: Expected error, such as a missing file or invalid filter.
+        2: Unexpected fatal error.
+    """
     parser = argparse.ArgumentParser(
         description="Inspect, validate and analyze CSV files."
     )

@@ -1,3 +1,9 @@
+"""CSV analysis report display utilities.
+
+This module uses Rich to display CSV analysis results as formatted
+tables in the terminal.
+"""
+
 from rich.console import Console
 from rich.table import Table
 
@@ -8,8 +14,15 @@ def display_report(analysis: dict) -> None:
     """
     Display a formatted analysis report in the terminal.
 
+    The report includes general information about the CSV file,
+    such as the number of rows, columns, and missing values.
+    If numerical columns are available, their descriptive statistics
+    are displayed in a separate table.
+
     Args:
         analysis: Dictionary containing the CSV analysis results.
+            Expected keys include ``row_count``, ``column_count``,
+            ``missing_values``, ``statistics``, and ``numeric_columns``.
     """
     console.print("\n[bold cyan]CSV INSPECTION REPORT[/bold cyan]\n")
 

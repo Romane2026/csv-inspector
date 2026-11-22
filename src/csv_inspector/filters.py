@@ -1,3 +1,9 @@
+"""CSV filtering utilities.
+
+This module provides functions to filter pandas DataFrames using
+comparison operators on selected columns.
+"""
+
 import pandas as pd
 
 
@@ -10,6 +16,11 @@ def filter_csv(
     """
     Filter a DataFrame using a comparison condition.
 
+
+    The filter is applied to the specified column using one of the
+    supported comparison operators. If the column contains numerical
+    data, the comparison value is converted to a float.
+
     Supported operators: ==, !=, >, <, >=, <=
 
     Args:
@@ -19,10 +30,13 @@ def filter_csv(
         value: The value to compare against.
 
     Returns:
-        A filtered DataFrame.
+        A DataFrame containing only the rows that match the condition.
+
 
     Raises:
-        ValueError: If the column or operator is invalid.
+        ValueError: If the column does not exist, the operator is
+            unsupported, the value is not numeric for a numerical
+            column, or the comparison is incompatible with the data.
     """
     if column not in data.columns:
         raise ValueError(f"Column '{column}' does not exist.")

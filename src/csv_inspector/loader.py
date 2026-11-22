@@ -1,3 +1,9 @@
+"""CSV file loading utilities.
+
+This module provides functions to load CSV files into pandas DataFrames
+and handle common file-related errors.
+"""
+
 from pathlib import Path
 
 import pandas as pd
@@ -6,6 +12,9 @@ import pandas as pd
 def load_csv(file_path: str) -> pd.DataFrame:
     """
     Load a CSV file and return its content as a DataFrame.
+
+     The CSV file is read using pandas. Empty files, files without data,
+    and invalid CSV files are rejected.
 
     Args:
         file_path: Path to the CSV file.

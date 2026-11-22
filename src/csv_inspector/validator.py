@@ -1,3 +1,10 @@
+"""CSV validation utilities.
+
+This module provides functions to validate CSV data and detect common
+structural issues, such as missing column names, duplicate columns,
+and missing values.
+"""
+
 import pandas as pd
 
 
@@ -5,11 +12,16 @@ def validate_csv(data: pd.DataFrame) -> list[str]:
     """
     Validate a CSV DataFrame and return a list of detected problems.
 
+    The validation checks that the DataFrame contains columns and data,
+    that column names are not empty or duplicated, and that no missing
+    values are present.
+
     Args:
         data: The DataFrame to validate.
 
     Returns:
         A list of validation error messages.
+        An empty list is returned if no problems are detected.
     """
 
     errors = []
